@@ -11,7 +11,7 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
     gap-7 mt-4
      lg:grid-cols-4"
       >
-        {doctorList.map((doctor, index) => (
+        {doctorList.length>0?doctorList.map((doctor, index) => (
           <div
             className="border-[1px] rounded-lg p-3
             cursor-pointer hover:border-primary
@@ -55,7 +55,17 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
               </div>
             </div>
           </div>
-        ))}
+        ))
+        :
+        // Skelton Effect 
+        [1,2,3,4,5,6].map((item,index)=>(
+            <div className='h-[220px] bg-slate-200 
+            w-full rounded-lg animate-pulse'>
+
+            </div>
+        ))
+        
+        }
       </div>
     </div>
   );
