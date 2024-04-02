@@ -26,7 +26,7 @@ const Header = () => {
     justify-between p-4 shadow-sm"
     >
       <div className="flex items-center gap-10">
-        <Image src="./logo.svg" alt="logo" width={60} height={60} />
+        <Image src="./logo.svg" alt="logo" width={200} height={100} />
         <ul className="md:flex gap-8 hidden">
           {Menu.map((item, index) => (
             <Link href={item.path} key={index}>
