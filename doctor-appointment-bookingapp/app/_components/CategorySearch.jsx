@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import GlobalApi from "../_utils/GlobalApi";
 import Image from "next/image";
+
 const CategorySearch = () => {
   const [categoryList, setCategoryList] = useState([]);
 

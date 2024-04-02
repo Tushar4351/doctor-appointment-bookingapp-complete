@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CategorySearch from "./_components/CategorySearch";
+
 import DoctorList from "./_components/DoctorList";
 import Hero from "./_components/Hero";
 import GlobalApi from "./_utils/GlobalApi";
+import CategorySearch from "./_components/CategorySearch";
 
 export default function Home() {
   const [doctorList, setDoctorList] = useState([]);
