@@ -55,6 +55,12 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "doctors"
+    },
+    "appointments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::appointment.appointment",
+      "mappedBy": "doctor"
     }
   }
 }
