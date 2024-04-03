@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
-
   console.log(doctorList);
   return (
     <div className="mb-10 px-8">
@@ -14,8 +14,7 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
      lg:grid-cols-4"
       >
         {doctorList.length > 0
-            ? doctorList.map((doctor, index) => (
-            
+          ? doctorList.map((doctor, index) => (
               <div
                 className="border-[1px] rounded-lg p-3
             cursor-pointer hover:border-primary
@@ -45,10 +44,7 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
                   <h2 className="text-gray-500 text-sm">
                     {doctor.attributes?.Address}
                   </h2>
-                  <div
-                    //href={doctor?.id}
-                    className="w-full"
-                  >
+                  <Link href={"/details/" + doctor?.id} className="w-full">
                     <h2
                       className="p-2 px-3 border-[1px] border-primary
                     text-primary rounded-full w-full text-center
@@ -58,7 +54,7 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
                     >
                       Book Now
                     </h2>
-                  </div>
+                  </Link>
                 </div>
               </div>
             ))

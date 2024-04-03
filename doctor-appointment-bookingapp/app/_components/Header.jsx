@@ -1,13 +1,20 @@
 "use client";
-
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import {
   RegisterLink,
   LoginLink,
+  LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Header = () => {
   const Menu = [
@@ -27,6 +34,12 @@ const Header = () => {
       path: "/",
     },
   ];
+  const { user } = useKindeBrowserClient();
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <div
       className="flex items-center 
@@ -48,9 +61,57 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <LoginLink>
-        <Button>Get Started</Button>
-      </LoginLink>
+      {user ? (
+        <Popover>
+          <PopoverTrigger>
+            <Image
+              src={user.picture}
+              alt="profile-image"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            {/* ) : (
+              <Image
+                src={"./defaultUser"}
+                alt="profile-image"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            )} */}
+          </PopoverTrigger>
+          <PopoverContent className="w-44">
+            <ul className="flex  flex-col gap-2">
+              <li
+                className="cursor-pointer
+            hover:bg-slate-100 p-2 rounded-md"
+              >
+                Profile{" "}
+              </li>
+              <Link
+                href={"/my-booking"}
+                className="cursor-pointer
+            hover:bg-slate-100 p-2 rounded-md"
+              >
+                My Booking
+              </Link>
+
+              <li
+                className="cursor-pointer
+            hover:bg-slate-100 p-2 rounded-md"
+              >
+                <LogoutLink> Logout </LogoutLink>
+              </li>
+            </ul>
+          </PopoverContent>
+        </Popover>
+      ) : (
+        <LoginLink>
+          {" "}
+          <Button>Get Started</Button>
+        </LoginLink>
+      )}
     </div>
   );
 };
