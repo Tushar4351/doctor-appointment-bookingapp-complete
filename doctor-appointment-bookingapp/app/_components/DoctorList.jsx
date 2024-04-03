@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
+
+  console.log(doctorList);
   return (
     <div className="mb-10 px-8">
       <h2 className="font-bold text-xl">{heading}</h2>
@@ -12,7 +14,8 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
      lg:grid-cols-4"
       >
         {doctorList.length > 0
-          ? doctorList.map((doctor, index) => (
+            ? doctorList.map((doctor, index) => (
+            
               <div
                 className="border-[1px] rounded-lg p-3
             cursor-pointer hover:border-primary
@@ -26,6 +29,8 @@ const DoctorList = ({ doctorList, heading = "Popular Doctors" }) => {
                   height={200}
                   className="h-[200px] w-full object-cover rounded-lg"
                 />
+
+                {/* Want to some change later*/}
                 <div className="mt-3 items-baseline flex flex-col gap-1">
                   <h2
                     className="text-[10px] bg-blue-100 p-1 rounded-full

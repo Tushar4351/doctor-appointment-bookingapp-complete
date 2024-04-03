@@ -17,7 +17,7 @@ const CategorySearch = () => {
 
   const getCategoryList = () => {
     GlobalApi.getCategory().then((res) => {
-      // console.log(res.data.data);
+      //console.log(res.data.data);
       setCategoryList(res.data.data);
     });
   };

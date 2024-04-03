@@ -1,4 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,7 +48,9 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <Button>Get Started</Button>
+      <LoginLink>
+        <Button>Get Started</Button>
+      </LoginLink>
     </div>
   );
 };

@@ -794,6 +794,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,9 +802,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Icon: Attribute.Media;
-    doctor: Attribute.Relation<
+    doctors: Attribute.Relation<
       'api::category.category',
-      'manyToOne',
+      'manyToMany',
       'api::doctor.doctor'
     >;
     createdAt: Attribute.DateTime;
@@ -848,7 +849,7 @@ export interface ApiDoctorDoctor extends Schema.CollectionType {
     image: Attribute.Media;
     categories: Attribute.Relation<
       'api::doctor.doctor',
-      'oneToMany',
+      'manyToMany',
       'api::category.category'
     >;
     createdAt: Attribute.DateTime;

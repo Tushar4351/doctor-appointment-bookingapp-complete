@@ -29,7 +29,7 @@ function CategoryList() {
 
   const getCategoryList = () => {
     GlobalApi.getCategory().then((resp) => {
-      console.log(resp.data.data);
+    //  console.log(resp.data.data);
       setCategoryList(resp.data.data);
     });
   };
