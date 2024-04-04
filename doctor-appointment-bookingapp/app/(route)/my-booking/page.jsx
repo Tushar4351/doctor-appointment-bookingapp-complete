@@ -35,10 +35,8 @@ function MyBooking() {
 
 
 
-
-
   return (
-    <div className='px-4 sm:px-10 mt-10'>
+    <div className='px-4 sm:px-10 mt-10 h-screen'>
         <h2 className='font-bold text-2xl'>My Booking</h2>
         <Tabs defaultValue="upcoming" className="w-full mt-5">
             <TabsList className="w-full justify-start">
