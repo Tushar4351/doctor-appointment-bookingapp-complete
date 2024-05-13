@@ -3,7 +3,7 @@ const { default: axios } = require("axios");
 const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const axiosClient = axios.create({
-  baseURL: "https://doctor-appointment-booking-admin-nxr7.onrender.com/api",
+  baseURL: "https://doctor-appointment-booking-strapi-backend.onrender.com/api",
   headers: {
     Authorization: `Bearer ${API_KEY}`,
   },
