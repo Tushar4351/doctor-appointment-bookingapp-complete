@@ -9,6 +9,8 @@ const axiosClient = axios.create({
   },
 });
 
+//api for getting the datas
+
 const getCategory = () => axiosClient.get("/categories?populate=*");
 const getDoctorList = () => axiosClient.get("/doctors?populate=*");
 const getDoctorByCategory = (category) =>
